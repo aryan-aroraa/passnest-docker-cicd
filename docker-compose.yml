@@ -25,6 +25,18 @@ services:
       - passnest-network
     depends_on:
       - backend
+
+  nginx-server:
+    image: nginx
+    networks:
+      - passnest-network
+    depends_on:
+      - backend
+      - frontend
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     
 networks:
   passnest-network:
