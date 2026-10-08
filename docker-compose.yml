@@ -11,7 +11,7 @@ services:
   backend:
     image: aryanaroraa/passnest-backend:latest
     ports:
-      - "3001:3000"
+      - "3000:3000"
     networks:
       - passnest-network
     depends_on:
@@ -20,7 +20,7 @@ services:
   frontend:
     image: aryanaroraa/passnest-frontend:latest
     ports:
-      - "5172:5173"
+      - "5173:5173"
     networks:
       - passnest-network
     depends_on:
