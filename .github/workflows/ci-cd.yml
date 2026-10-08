@@ -2,7 +2,7 @@ name: passnest pipeline
 
 on:
   push:
-    branches: ["feature/nginx"]
+    branches: ["main"]
 
 jobs:
   build:
