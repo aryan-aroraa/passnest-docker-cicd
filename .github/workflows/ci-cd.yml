@@ -13,14 +13,33 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - name: Setting up npm 
+
+      - name: Setting up npm for frontend
         run: |
           npm ci
           npm run lint
           npm run build
+
+      - name: Setting up npm for backend
+        run: |
+          cd backend
+          npm ci
         
       - name: Building frontend docker image
         run: docker build -t aryanaroraa/passnest-frontend:latest .
         
       - name: Building backend docker image
         run: docker build -t aryanaroraa/passnest-backend:latest ./backend
+      
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+      
+      - name: Pushing images to docker hub
+        run: |
+          docker push aryanaroraa/passnest-frontend:latest 
+          docker push aryanaroraa/passnest-backend:latest
+      
+
