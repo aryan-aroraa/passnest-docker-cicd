@@ -50,6 +50,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd passnest-docker-cicd
+            git pull origin main
             docker compose pull
             docker compose up -d
 
