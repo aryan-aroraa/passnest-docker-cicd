@@ -18,7 +18,7 @@ const Manager = () => {
     };
 
     const getPasswords = async () => {
-        const res = await fetch("http://localhost:3000/")
+        const res = await fetch("/api/")
         const passwords = await res.json()
         console.log(passwords)
         setPasswordArray(passwords)
@@ -55,7 +55,7 @@ const Manager = () => {
 
             setPasswordArray([...passwordArray, newPassword]);
 
-            await fetch("http://localhost:3000/", {
+            await fetch("/api/", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(newPassword),
@@ -92,7 +92,7 @@ const Manager = () => {
             })
             setPasswordArray(newArr)
             // localStorage.setItem("passwords", JSON.stringify(newArr))
-            await fetch("http://localhost:3000/", {
+            await fetch("/api/", {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ id })
