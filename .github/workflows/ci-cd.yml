@@ -42,4 +42,21 @@ jobs:
           docker push aryanaroraa/passnest-frontend:latest 
           docker push aryanaroraa/passnest-backend:latest
       
+      - name: Execute remote SSH commands using password
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd passnest-docker-cicd
+            docker compose pull
+            docker compose up -d
+
+      # - name: 
+      #   run: |
+      #     cd passnest-docker-cicd
+      #     docker compose pull
+      #     docker compose up -d
+      
 
