@@ -161,7 +161,7 @@ const Manager = () => {
                 <h1 className='font-bold text-3xl md:text-4xl xl:text-6xl text-center'>
                     <span className="text-green-500">&lt; </span>
                     Pass
-                    <span className="text-green-500">Nest /&gt;</span>
+                    <span className="text-green-500">Tube /&gt;</span>
                 </h1>
                 <h2 className='text-green-500 font-semibold text-center text-lg md:text-2xl'>A safe home for all your passwords.</h2>
 
