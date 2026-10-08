@@ -1,0 +1,33 @@
+services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - passnest-network
+    volumes:
+      - passnest-mongo-data:/data/db
+  
+  backend:
+    image: aryanaroraa/passnest-backend:latest
+    ports:
+      - "3001:3000"
+    networks:
+      - passnest-network
+    depends_on:
+      - mongo
+
+  frontend:
+    image: aryanaroraa/passnest-frontend:latest
+    ports:
+      - "5172:5173"
+    networks:
+      - passnest-network
+    depends_on:
+      - backend
+    
+networks:
+  passnest-network:
+
+volumes:
+  passnest-mongo-data:
