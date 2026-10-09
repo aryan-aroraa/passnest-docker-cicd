@@ -53,11 +53,5 @@ jobs:
             git pull origin main
             docker compose pull
             docker compose up -d --force-recreate
-
-      # - name: 
-      #   run: |
-      #     cd passnest-docker-cicd
-      #     docker compose pull
-      #     docker compose up -d
       
 
