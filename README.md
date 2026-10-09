@@ -37,7 +37,7 @@ Docker Compose manages the services and their network. GitHub Actions automates 
 
 ## Demo (Click the preview to watch the demo.)
 
-[![PassNest Demo](screenshots/demo.png)](YOUR_VIDEO_URL)
+[![PassNest Demo](screenshots/demo.png)](https://www.linkedin.com/feed/update/urn:li:activity:7514233492164222978/)
 
 The demo showcases the application running with Docker Compose, Nginx reverse proxying, MongoDB persistence, and automated deployment to AWS EC2 using GitHub Actions.
 
